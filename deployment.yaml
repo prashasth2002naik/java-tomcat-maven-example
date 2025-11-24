@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: javajspaapp
+  labels:
+    app: javajspaapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: javajspaapp
+  template:
+    metadata:
+      labels:
+        app: javajspaapp
+    spec:
+      containers:
+      - name: javajspaapp
+        image: prashasthnaik/javajspaapp:v1
+        ports:
+        - containerPort: 8080
